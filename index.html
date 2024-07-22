@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital study advisor powered by Generative A.I and RAG</title>
+    <style>
+        video{
+            max-width: 100%;
+            height: auto;
+        }
+        image{
+            max-width: 100%;
+            height: auto;
+        }
+        p{
+            font-family:verdana;
+        }
+        chapter{display: inline-block; text-align: left; width: 60%;}
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">3D Digital Study Advisor Sara:</h1>
+    <h2 style="text-align: center;"> Chat-bot for UU Masters Student Administration</h2>
+    <div style="text-align: center;">
+        <h2> By: <a href="https://www.linkedin.com/in/pascaltollens/" rel="external">Pascal Tollens</a> </h2>
+        <h2> Supervisor: <a href="https://www.uu.nl/staff/ZYumak" rel="external">Dr. Z. Yumak</a> </h2>
+        <h2> Second Examiner: <a href="https://www.uu.nl/staff/RCVeltkamp" rel="external">Prof. dr. R.C. Veltkamp </a> </h2>
+    </div>
+    
+    <div style="text-align: center;">
+        <h2>Disclaimer</h2>
+        <div style="display: inline-block; text-align: center; width: 60%;">
+            <p>
+                At the time of writing, July 2024, the thesis is under a two year embargo. Thus, there are no links to the thesis or the source code of the project.
+            </p>
+        </div>
+        <h2>Abstract</h2>
+        <chapter>
+            <p>
+                This project developed and researched the effectiveness of a 3D digital human chat-bot, with the goal of helping students apply to the GMT Masters course. The development goal of the chat-bot is to have an adaptable digital human, which may use several bot frameworks depending on different needs in the future.
+
+                UnrealEngine's MetaHuman was used to create the digital human, while LangChain with ChatGPT 4o was used to build the dialogue system. Using NVIDIA's Audio2Face, facial animations are able to be generated live using only audio.
+    
+                While the sample size is to small too draw definitive conclusions, participants were more satisfied with their experience with the digital human than using the website, even though the websites were able to answer their questions faster.
+            </p>
+        </chapter>
+    </div>
+    <div style="text-align: center;">
+        <h2>Generative A.I. and Retrieval-Augmented Generation (RAG)</h2>
+        <chapter>
+            <p>
+                To enhance the chat-bot's knowledge and to keep it on topic, Retrieval-Augmented Generation has been used. This has been implemented with the help of LangChain in python. The user's questions gets queried to the local knowledge base, which consists of embedded vector stores. The relevant information, in addition to the user question, is then queried to the LLM, which generates an appropriate response.
+            </p>
+        </chapter>
+        
+        <h2>Proposed Architecture</h2>
+        <chapter>
+            <p>
+                The figure below is the chat-bot structure that is implemented for this thesis project. This project had a few key goals, namely: To have a realistic high fidelity digital human, an interactive chat-bot and it should be viable to continue the project in the long-term. To achieve this, the chat-bot consists of a few modular components. For the realistic digital human, UnrealEngine's MetaHuman were used. The facial animations were driven by NVIDIA's Audio2Face, a generative AI model that creates animation from audio only. ChatGPT 4o was used as the LLM provider. Since the structure is modular, it is relativly easy to switch out different components of the chat-bot. Since LangChain works with a variety of LLMs, it is easy to switch the LLM. Audio2Face is responsible for streaming the facial animations, which is not limited to UnrealEngine. One thing to keep in mind, however, is to keep track of which component could be responsible of bottlenecking the system.
+            </p>
+        </chapter>
+        <img src="media/ArchScheme2.png" alt="" width="">
+    </div>
+    <div style="text-align: center;">
+        <h2>Video Demo</h2>
+        <chapter>
+            <p>
+                The following video is an example of a possible interaction and is the setup that is used to conduct the research. The voice is AI generated, using OpenAI's TTS. 
+            </p>
+        </chapter>
+        <video controls height="" width="">
+            <source src="media/DigitalAdvisor_demo.mp4" type="video/mp4">
+        </video>
+    </div>
+</body>
+</html>
